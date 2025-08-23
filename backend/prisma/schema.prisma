@@ -14,3 +14,40 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model Affiliate {
+  id        Int      @id @default(autoincrement())
+  name      String
+  clicks   Click[]
+}
+
+model Compaign {
+  id       Int      @id @default(autoincrement())
+  name      String
+  clicks   Click[]
+}
+
+model Click{
+  id         Int       @id @default(autoincrement())
+  affiliateId Int
+  compaignId  Int
+  clickId   String
+  timestamp  DateTime   @default(now())
+
+  affiliate   Affiliate @relation(fields: [affiliateId], references: [id])
+  compaign    Compaign  @relation(fields: [compaignId], references: [id])
+
+  conversions Conversion[]
+
+  createdAt   DateTime  @default(now())
+}
+
+model Conversion{
+  id        Int      @id @default(autoincrement())
+  clickId   Int
+  amount   Float
+  timestamp DateTime  @default(now())
+  currency String
+
+  click     Click    @relation(fields: [clickId], references: [id])
+
+}
