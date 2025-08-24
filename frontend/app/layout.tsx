@@ -26,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased p-6`}
       >
         <h1>Affiliate Postback MVP</h1>
         <nav style={{ display: 'flex', gap: 16, marginBottom: 16 }}>
