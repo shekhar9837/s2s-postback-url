@@ -58,7 +58,7 @@ router.get('/postback', async (req, res) => {
 
     await prisma.conversion.create({
       data: {
-        clickIdFk: click.id,
+        clickId: click.id,
         amount: Number(amount),
         currency: String(currency).toUpperCase(),
       },
@@ -74,6 +74,7 @@ router.get('/postback', async (req, res) => {
 // Read endpoints for dashboard
 router.get('/affiliates', async (_req, res) => {
   const list = await prisma.affiliate.findMany({ orderBy: { id: 'asc' } });
+  console.log(list);
   res.json(list);
 });
 
@@ -81,10 +82,11 @@ router.get('/affiliates/:id/clicks', async (req, res) => {
   const id = Number(req.params.id);
   const clicks = await prisma.click.findMany({
     where: { affiliateId: id },
-    orderBy: { ts: 'desc' },
+    orderBy: { id: 'asc' },
     take: 200,
     include: { campaign: true },
   });
+  console.log(clicks);
   res.json(clicks.map(c => ({
     id: c.id, click_id: c.clickId, campaign_id: c.campaignId,
     campaign_name: c.campaign.name, ts: c.ts
@@ -95,7 +97,7 @@ router.get('/affiliates/:id/conversions', async (req, res) => {
   const id = Number(req.params.id);
   const convs = await prisma.conversion.findMany({
     where: { click: { affiliateId: id } },
-    orderBy: { ts: 'desc' },
+    orderBy: { id: 'asc' },
     take: 200,
     include: { click: { include: { campaign: true } } },
   });

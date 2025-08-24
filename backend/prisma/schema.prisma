@@ -29,25 +29,23 @@ model Campaign {
 model Click{
   id         Int       @id @default(autoincrement())
   affiliateId Int
-  compaignId  Int
-  clickId   String
-  timestamp  DateTime   @default(now())
+  campaignId  Int
+  clickId   String     @unique
+  ts  DateTime   @default(now())
 
   affiliate   Affiliate @relation(fields: [affiliateId], references: [id])
-  campaign    Campaign  @relation(fields: [compaignId], references: [id])
+  campaign    Campaign  @relation(fields: [campaignId], references: [id])
 
   conversions Conversion[]
-
-  createdAt   DateTime  @default(now())
 }
 
 model Conversion{
   id        Int      @id @default(autoincrement())
-  clickId   Int
+  clickId   Int     
   amount   Float
-  timestamp DateTime  @default(now())
+  ts DateTime  @default(now())
   currency String
 
-  click     Click    @relation(fields: [clickId], references: [id])
+  click   Click @relation(fields: [clickId], references: [id])
 
 }
