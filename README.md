@@ -26,64 +26,16 @@ A postback is a server-to-server HTTP request that an affiliate network sends to
 - **Campaigns**: Marketing campaigns with unique tracking parameters
 - **Clicks**: Individual click events with unique click IDs
 - **Conversions**: Revenue events attributed to specific clicks
+
+
 ## Screenshots
 
-### Dashboard Overview
-
-Here are some screenshots of the S2S Postback URL system in action:
-
-<!-- Add your screenshots here using the format:
-![Description](docs/screenshots/screenshot-name.png)
--->
-
-### How to Add Screenshots
-
-1. **Take screenshots** of your application running locally
-2. **Save them** to the `docs/screenshots/` directory with descriptive names:
-   - `dashboard-home.png` - Main dashboard view
-   - `affiliate-clicks.png` - Affiliate clicks report
-   - `conversion-tracking.png` - Conversion tracking view
-   - `api-testing.png` - API testing with tools like Postman
-   - `prisma-studio.png` - Database management with Prisma Studio
-
-3. **Add them to README** using markdown image syntax:
+3. Screeenshots of diffrent pages:
    ```markdown
  ![Dashboard Home](docs/screenshots/dashboard-home.png "Dashboard Home Screenshot")
 ![Affiliate Performance](docs/screenshots/affiliate-clicks.png "Affiliate Clicks Screenshot")
 ![Postback URL](docs/screenshots/postback.png "Postback URL Screenshot")
-
    ```
-
-4. **Optimize images** (recommended):
-   - Use PNG format for screenshots with transparency
-   - Resize images to reasonable dimensions (max 1200px width)
-   - Compress images to reduce file size while maintaining quality
-
-### Screenshot Guidelines
-
-- **Capture the entire browser window** or relevant section
-- **Include the URL bar** to show the application context
-- **Use consistent naming** conventions
-- **Add descriptive alt text** for accessibility
-- **Test images** in both light and dark modes if applicable
-
-### Tools for Taking Screenshots
-
-- **Browser DevTools**: Built-in screenshot tools in Chrome/Edge DevTools
-- **System Tools**: Snipping Tool (Windows), Screenshot (macOS), Flameshot (Linux)
-- **Browser Extensions**: Awesome Screenshot, FireShot, or Nimbus
-- **CLI Tools**: `scrot` (Linux), `screencapture` (macOS)
-
-### Example Screenshot Structure
-
-```bash
-docs/screenshots/
-├── dashboard-home.png
-├── affiliate-management.png
-├── click-tracking.png
-├── conversion-reports.png
-└── api-documentation.png
-```
 
 ## Local Development Setup
 
@@ -303,16 +255,6 @@ GET /affiliates/{id}/conversions
    - Verify CORS_ORIGIN includes your frontend URL
    - Default allows all origins (*) for development
 
-## Production Deployment
-
-For production deployment:
-
-1. Use a managed PostgreSQL service (RDS, Supabase, etc.)
-2. Set secure environment variables
-3. Configure proper CORS origins
-4. Use process manager like PM2 for the backend
-5. Set up SSL/TLS certificates
-6. Implement proper logging and monitoring
 
 ## Contributing
 
