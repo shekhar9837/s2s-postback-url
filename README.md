@@ -48,9 +48,10 @@ Here are some screenshots of the S2S Postback URL system in action:
 
 3. **Add them to README** using markdown image syntax:
    ```markdown
-   ![Dashboard Home](docs/screenshots/dashboard-home.png)
-   ![Affiliate Performance](docs/screenshots/affiliate-clicks.png)
-   ![Postback URL](docs/screenshots/postback.png)
+ ![Dashboard Home](docs/screenshots/dashboard-home.png "Dashboard Home Screenshot")
+![Affiliate Performance](docs/screenshots/affiliate-clicks.png "Affiliate Clicks Screenshot")
+![Postback URL](docs/screenshots/postback.png "Postback URL Screenshot")
+
    ```
 
 4. **Optimize images** (recommended):
