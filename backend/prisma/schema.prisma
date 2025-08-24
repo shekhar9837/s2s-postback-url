@@ -20,7 +20,7 @@ model Affiliate {
   clicks   Click[]
 }
 
-model Compaign {
+model Campaign {
   id       Int      @id @default(autoincrement())
   name      String
   clicks   Click[]
@@ -34,7 +34,7 @@ model Click{
   timestamp  DateTime   @default(now())
 
   affiliate   Affiliate @relation(fields: [affiliateId], references: [id])
-  compaign    Compaign  @relation(fields: [compaignId], references: [id])
+  campaign    Campaign  @relation(fields: [compaignId], references: [id])
 
   conversions Conversion[]
 
